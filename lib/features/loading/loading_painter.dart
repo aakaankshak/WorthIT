@@ -13,14 +13,14 @@ class LoadingPainter extends CustomPainter {
 
     // Background Glow
     final glowPaint = Paint()
-      ..color = Colors.purple.shade300.withValues(alpha: 0.3)
+      ..color = Colors.purple.shade300.withOpacity(0.3)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 30);
 
     canvas.drawCircle(center, radius + 20, glowPaint);
 
     // Inner Glow
     final innerGlowPaint = Paint()
-      ..color = Colors.purple.shade400.withValues(alpha: 0.5)
+      ..color = Colors.purple.shade400.withOpacity(0.5)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 15);
 
     canvas.drawCircle(center, radius, innerGlowPaint);

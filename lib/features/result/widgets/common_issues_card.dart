@@ -12,31 +12,30 @@ class CommonIssuesCard extends StatelessWidget {
         side: BorderSide(color: Colors.grey.shade200),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0), // Reduced from 16 to 10
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Common Issues',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
 
-            // Issue 1
             _buildIssueRow(
               icon: Icons.battery_alert,
               title: 'Battery Longevity',
-              description: 'Capacity drops by ~15% after 400 charge cycles.',
+              description: 'Drops ~15% after 400 cycles.', // Shortened text
             ),
 
-            const SizedBox(height: 16),
+            const SizedBox(height: 8), // Reduced gap
 
-            // Issue 2
             _buildIssueRow(
               icon: Icons.build_circle_outlined,
               title: 'Build Integrity',
               description:
-                  'Minor creaking reported in the chassis over long-term use.',
+                  'Minor creaking reported in chassis.', // Shortened text
             ),
           ],
         ),
@@ -52,15 +51,8 @@ class CommonIssuesCard extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.purple.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Icon(icon, color: Colors.purple, size: 20),
-        ),
-        const SizedBox(width: 12),
+        Icon(icon, color: Colors.purple, size: 18), // Smaller icon
+        const SizedBox(width: 10),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,13 +61,12 @@ class CommonIssuesCard extends StatelessWidget {
                 title,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 13,
                 ),
               ),
-              const SizedBox(height: 2),
               Text(
                 description,
-                style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+                style: TextStyle(fontSize: 11, color: Colors.grey.shade700),
               ),
             ],
           ),

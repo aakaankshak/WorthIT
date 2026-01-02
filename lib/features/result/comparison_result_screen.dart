@@ -87,8 +87,8 @@ class ComparisonResultScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        // FIXED: Using withValues instead of withOpacity
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+        // FIXED: Replaced withOpacity
+        border: Border.all(color: color.withOpacity(0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
